@@ -1,0 +1,12 @@
+{
+  "name": "healthcare-translator-api",
+  "version": "1.0.0",
+  "description": "A serverless function for the healthcare translator app.",
+  "main": "api/translate.js",
+  "dependencies": {
+    "@google/generative-ai": "^0.15.0"
+  },
+  "scripts": {
+    "start": "node api/translate.js"
+  }
+}
