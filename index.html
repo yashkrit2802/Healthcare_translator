@@ -224,6 +224,7 @@
                 recognition.lang = sourceLangSelect.value;
                 recognition.continuous = true;
                 recognition.interimResults = true;
+                finalTranscript = ''; // Reset the transcript for a new session
 
                 // Event handler for when a speech recognition result is received
                 recognition.onresult = (event) => {
@@ -232,6 +233,7 @@
                         const transcript = event.results[i][0].transcript;
                         if (event.results[i].isFinal) {
                             finalTranscript += transcript + ' ';
+                            // Call translateText for each final result.
                             translateText(finalTranscript, sourceLangSelect.value, targetLangSelect.value);
                         } else {
                             interimTranscript += transcript;
